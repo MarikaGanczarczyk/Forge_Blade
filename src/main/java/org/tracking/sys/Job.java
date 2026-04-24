@@ -3,7 +3,7 @@ package org.tracking.sys;
 import java.util.List;
 import java.util.PrimitiveIterator;
 
-public class Job extends Worker{
+public class Job {
 
     private Worker assignedWorker;
     private String jobType;
@@ -11,11 +11,11 @@ public class Job extends Worker{
     private List<Material> requiredMaterials;
 
     public Job(Worker assignedWorker, String jobType, boolean isCompleted, List<Material> requiredMaterials) {
-        super();
         this.assignedWorker = assignedWorker;
         this.jobType = jobType;
         this.isCompleted = isCompleted;
         this.requiredMaterials = requiredMaterials;
+        assignedWorker.addJob(this);
     }
 
 
@@ -68,7 +68,6 @@ public class Job extends Worker{
                 "assignedWorker=" + assignedWorker +
                 ", jobType='" + jobType + '\'' +
                 ", isCompleted=" + isCompleted +
-                ", requiredMaterials=" + requiredMaterials +
                 '}';
     }
 }

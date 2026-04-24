@@ -12,10 +12,13 @@ public class Material {
     }
 
 
-    public int useMaterial(int newQuantity){
-       return  this.quantity - newQuantity;
 
+
+    public void useMaterial(int amount) {
+        quantity -= amount;
     }
+
+
 
 
     public String getName() {

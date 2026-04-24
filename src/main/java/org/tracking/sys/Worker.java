@@ -1,17 +1,15 @@
 package org.tracking.sys;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Worker {
     private String name;
     private List<Job> assignedJobs;
 
-    public Worker() {
+    public Worker(String name) {
         this.name = name;
-        this.assignedJobs = assignedJobs;
-    }
-    public Worker(String name){
-        this.name=name;
+        this.assignedJobs = new ArrayList<>();
     }
 
 
@@ -42,11 +40,5 @@ public class Worker {
         this.assignedJobs = assignedJobs;
     }
 
-    @Override
-    public String toString() {
-        return "Worker{" +
-                "name='" + name + '\'' +
-                ", assignedJobs=" + assignedJobs +
-                '}';
-    }
+
 }
